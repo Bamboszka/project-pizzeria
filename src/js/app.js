@@ -3,6 +3,11 @@ import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 
 const app = {
+  initBooking: function () {
+    const thisApp = this;
+    const BookingElem = document.querySelector(select.containerOf.booking);
+    thisApp.booking = new Booking(BookingElem);
+  },
   initPages: function () {
     const thisApp = this;
 
@@ -81,6 +86,7 @@ const app = {
     console.log('*** App starting ***');
     console.log('thisApp:', thisApp);
     console.log('settings:', settings);
+    thisApp.initBooking();
     thisApp.initPages();
     thisApp.initData();
     thisApp.initCart();
