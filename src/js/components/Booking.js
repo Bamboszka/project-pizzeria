@@ -1,6 +1,6 @@
 import { select, templates } from '../settings.js';
 import { utils } from '../utils.js';
-import AmountWidget from './amountWidget.js';
+import amountWidget from './amountWidget.js';
 
 class Booking {
   constructor(element) {
@@ -20,9 +20,9 @@ class Booking {
   }
   initWidgets() {
     const thisBooking = this;
-    thisBooking.AmountWidget = new AmountWidget(thisBooking.dom.peopleAmount);
+    thisBooking.AmountWidget = new amountWidget(thisBooking.dom.peopleAmount);
     thisBooking.dom.peopleAmount.addEventListener('updated', function () { });
-    thisBooking.AmountWidget = new AmountWidget(thisBooking.dom.hoursAmount);
+    thisBooking.AmountWidget = new amountWidget(thisBooking.dom.hoursAmount);
     thisBooking.dom.hoursAmount.addEventListener('updated', function () { });
   }
 }
