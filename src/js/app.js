@@ -25,8 +25,8 @@ const app = {
         break;
       }
     }
-    console.log('pageMatchingHash', pageMatchingHash);
-    thisApp.activatePage(idFromHash);
+    //console.log('pageMatchingHash', pageMatchingHash);
+    thisApp.activatePage(pageMatchingHash);
 
     for (let link of thisApp.navLinks) {
       link.addEventListener('click', function (event) {

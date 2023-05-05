@@ -263,5 +263,16 @@
             ]
         }
     ],
-    "bookings": []
+    "booking": [
+        {
+            "id": 1,
+            "date": "2021-01-01",
+            "hour": "18:00",
+            "table": 1,
+            "repeat": false,
+            "duration": 4,
+            "ppl": 3,
+            "starters": []
+        }
+    ]
 }
