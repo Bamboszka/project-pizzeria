@@ -1,7 +1,11 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 import { settings, select, classNames } from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
+import Home from './components/Home.js';
 
 const app = {
   initBooking: function () {
@@ -65,6 +69,7 @@ const app = {
       new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
     }
   },
+
   initData: function () {
     const thisApp = this;
     thisApp.data = {};
@@ -82,6 +87,25 @@ const app = {
       });
     console.log('thisApp.data', JSON.stringify(thisApp.data));
   },
+
+  initHome: function () {
+    const thisApp = this;
+    const HomeElem = document.querySelector(select.containerOf.homePage);
+    thisApp.homePage = new Home(HomeElem);
+  },
+  Flickity: function () {
+    const thisApp = this;
+    const elem = document.querySelector('.main-carousel');
+    const flick = new Flickity(elem, {
+      cellAlign: 'center',
+      freeScroll: true,
+      wrapAround: true,
+      contain: true,
+      autoPlay: true,
+      imagesLoaded: true,
+    });
+  },
+
   init: function () {
     const thisApp = this;
     console.log('*** App starting ***');
@@ -91,6 +115,8 @@ const app = {
     thisApp.initPages();
     thisApp.initData();
     thisApp.initCart();
+    thisApp.initHome();
+    thisApp.Flickity();
   },
   initCart: function () {
     const thisApp = this;
